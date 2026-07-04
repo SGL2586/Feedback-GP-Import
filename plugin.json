@@ -1,0 +1,12 @@
+{
+  "id": "gp_importer",
+  "name": "GP Importer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bulk-import Guitar Pro files (.gp3–.gpx) as playable feedpaks with FluidSynth-rendered audio.",
+  "category": "tools",
+  "nav": { "label": "GP Importer", "screen": "plugin-gp_importer" },
+  "screen": "screen.html",
+  "script": "screen.js",
+  "routes": "routes.py"
+}

@@ -1,0 +1,66 @@
+<div class="flex flex-col h-full p-6 overflow-y-auto" style="max-width:960px;margin:0 auto">
+
+  <!-- View: Start -->
+  <div id="gpiv-start">
+    <h1 class="text-xl font-bold text-gray-100 mb-4">GP Importer</h1>
+    <p class="text-gray-400 text-sm mb-4">
+      Bulk-import Guitar Pro files as playable feedpaks with audio.
+      Scans any directory for <code>.gp3</code>, <code>.gp4</code>, <code>.gp5</code>, <code>.gp</code>, and <code>.gpx</code> files.
+    </p>
+
+    <div id="gpiv-deps" class="mb-4"></div>
+
+    <label class="block text-gray-300 text-sm font-medium mb-1">Scan Directory</label>
+    <div class="flex gap-2">
+      <input type="text" id="gpiv-dir"
+             class="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-gray-200 text-sm
+                    focus:outline-none focus:border-blue-500"
+             placeholder="/path/to/gp/files">
+      <button id="gpiv-scan-btn"
+              class="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2 text-sm font-medium
+                     disabled:opacity-50 disabled:cursor-not-allowed">
+        Scan
+      </button>
+    </div>
+    <div id="gpiv-scan-error" class="text-red-400 text-sm mt-1 hidden"></div>
+  </div>
+
+  <!-- View: Files -->
+  <div id="gpiv-files" style="display:none">
+    <h1 class="text-xl font-bold text-gray-100 mb-1">GP Importer</h1>
+    <div id="gpiv-dir-label" class="text-gray-500 text-xs mb-3"></div>
+
+    <div class="flex items-center gap-3 mb-3 flex-wrap">
+      <span id="gpiv-count" class="text-gray-300 text-sm"></span>
+      <button id="gpiv-select-all" class="text-blue-400 hover:text-blue-300 text-xs">Select All</button>
+      <button id="gpiv-deselect-all" class="text-blue-400 hover:text-blue-300 text-xs">Deselect All</button>
+      <button id="gpiv-import-btn"
+              class="bg-green-700 hover:bg-green-600 text-white rounded px-4 py-1.5 text-sm font-medium
+                     disabled:opacity-50 disabled:cursor-not-allowed ml-auto">
+        Import Selected
+      </button>
+    </div>
+
+    <div id="gpiv-table" class="overflow-x-auto"></div>
+  </div>
+
+  <!-- View: Progress / Results -->
+  <div id="gpiv-progress" style="display:none">
+    <h1 class="text-xl font-bold text-gray-100 mb-4">Importing...</h1>
+
+    <div id="gpiv-progress-bar" class="w-full bg-gray-700 rounded-full h-3 mb-3 overflow-hidden">
+      <div id="gpiv-progress-fill"
+           class="bg-blue-500 h-full rounded-full transition-all duration-300"
+           style="width:0%"></div>
+    </div>
+
+    <div id="gpiv-progress-file" class="text-gray-200 text-sm font-medium truncate"></div>
+    <div id="gpiv-progress-message" class="text-gray-400 text-xs mt-1"></div>
+
+    <div id="gpiv-results" class="mt-4 hidden">
+      <h2 class="text-gray-200 text-sm font-semibold mb-2">Results</h2>
+      <div id="gpiv-results-list" class="space-y-1"></div>
+    </div>
+  </div>
+
+</div>
